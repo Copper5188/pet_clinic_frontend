@@ -58,6 +58,7 @@ class UserList extends React.Component{
                              <th>用户密码</th>
                              <th>创建时间</th>
                              <th>用户身份</th>
+                            {/*} <th>图片</th> */}
                           </tr>
                          </thead>
                          <tbody>
@@ -70,6 +71,7 @@ class UserList extends React.Component{
                                          <td>{user.password}</td>
                                          <td>{this.state.dataFormat(user.create_time)}</td>
                                          <td>{this.state.aut[user.authority]}</td>
+                                    {/*<td><img src="http://192.168.1.101:5188/images/goods1.jpg"/></td>*/}
                                     </tr>
                                  );
 

@@ -60,7 +60,7 @@ class SideNav extends React.Component{
 
 
                         <li>
-                            <NavLink exact to="/disease_kind" activeClassName="active-menu">
+                            <NavLink to="/disease_kind/index" activeClassName="active-menu">
                                 <i className="fa fa-bar-chart-o"></i>
                                 <span>病种管理</span>
                             </NavLink>

@@ -20,6 +20,7 @@ class MUtil{
      			//请求成功
      			if('000' === res.code){
                      typeof resolve === 'function' && resolve(res.data, res.msg);
+
                      window.location.href='/';
      			}
      			else {
