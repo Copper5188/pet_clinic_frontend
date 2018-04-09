@@ -9,7 +9,7 @@ class User{
 	login(loginInfo){
 		return _mm.request({
        	type : 'post',
-       	url  : 'http://192.168.1.101:5188/login',
+       	url  : 'http://localhost:5188/login',
        	//type: 'get',
        	//url: 'http://localhost:5188/users/allList?pageSize=1&curPage=0'
        	data : loginInfo
@@ -42,7 +42,7 @@ class User{
 	getUserList(curPage){
 		return _nn.request({
 			type : 'get',
-			url  : 'http://192.168.1.101:5188/users/allList?pageSize=10&curPage=' + (curPage*1 - 1),
+			url  : 'http://localhost:5188/users/allList?pageSize=10&curPage=' + (curPage*1 - 1),
 		})
 
 	}
