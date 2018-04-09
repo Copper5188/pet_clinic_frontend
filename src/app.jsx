@@ -24,6 +24,13 @@ class App extends React.Component{
 				    		<Route path="/user/index" component={UserList}/>	
 				    		<Route path="/disease_kind/index" component={Disease_kind}/>
 				    		<Route path="/disease_kind/save"  component={Disease_kind_save}/>
+				    		<Route path="/user/index" component={UserList}/>
+							{/* <Route path="/department" component={Homet}/>
+							<Route path="/inhospital" component={Home}/>
+							<Route path="/medicine" component={Home}/>
+							<Route path="/fee" component={Home}/>
+							<Route path="/assay" component={Home}/>
+							<Route path="/vaccine" component={Home}/> */}
 							<Redirect exact from ="/user" to ="/user/index"/>
 							
 				    	</Switch>
