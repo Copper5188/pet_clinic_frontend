@@ -6,6 +6,7 @@ import DiseaseK     from 'service/disease_kind-service.jsx'
 import Pagination   from 'util/pagination/index.jsx';
 import ListSearch   from './index-list-search.jsx';
 
+
 import './index.scss';
 
 
@@ -34,17 +35,19 @@ class DiseaseKind extends React.Component{
     }
     
     loadUserList(){
-        //let listParam = {};
-        //listParam.listType = this.state.listType;
-        //listParam.curPage  = this.state.curPage;
+        let listParam = {};
+        listParam.listType = this.state.listType;
+        listParam.curPage  = this.state.curPage;
 //如果是搜索的话传入搜索和关键字
-        //if(this.state.listType === 'search'){
-        //    listParam.searchType = this.state.searchType;
-        //    listParam.keyword  = this.state.searchkeword;
-        //}
-        _diseasek.getDiseaseKind(this.state.curPage).then(res => {  //listParam
+        if(this.state.listType === 'search'){
+            listParam.searchType = this.state.searchType;
+            listParam.keyword    = this.state.searchkeword;
+        }
+        //alert(JSON.stringify(listParam));
+        _diseasek.getDiseaseKind(listParam).then(res => {  //this.state.curPage
             console.log(res.data[0]);//取一个字段样例 去console里看
             this.setState({list: res.data});
+           // alert(res.maxPage);
             this.setState({total: res.maxPage * 10});
             //this.setState({totalPage: res.maxPage});
         } );
@@ -52,17 +55,16 @@ class DiseaseKind extends React.Component{
 
     
     onSearch(searchType,searchKeyword){
-        //let listType = searchKeyword === ''?'list' : 'search';
-        //this.setState({
-        //    listType      : listType,
-        //    curPage       : 1,
-        //    searchType    : searchType,
-        //    searchKeyword : searchKeyword 
-        //},()=>{
-        //    tthis.loadUserList();
-        //}
-        //})
-        console.log(searchType,searchKeyword);
+        let listType = searchKeyword === ''?'list' : 'search';
+        this.setState({
+            listType      : listType,
+            curPage       : 1,
+            searchType    : searchType,
+            searchKeyword : searchKeyword 
+           },()=>{
+                this.loadUserList();
+        });
+        //console.log(searchType,searchKeyword);浏览器里拿搜索框的值
     }
 
     delPost(dikind_id){
@@ -99,10 +101,15 @@ Deletedikind(e,dikind_id){
     render() {
         return (
             <div id="page-wrapper">
-             <h1 className='page-header'>病种管理</h1>
-                  <ListSearch onSearch={(searchType,searchKeyword) => {this.onSearch(searchType,searchKeyword)}}/>
-                  
-
+             <h1 className='page-header'>病种管理
+                <div className="page-header-right">
+                    <Link to ="/disease_kind/save" className='btn btn-primary'>
+                        <i className='fa fa-plus'></i>
+                         <span>添加病种信息</span>
+                    </Link>
+                </div>
+            </h1>
+             <ListSearch onSearch={(searchType,searchKeyword) => {this.onSearch(searchType,searchKeyword)}}/>
                 <div className="row">
                     <div className="col-md-12 ">                  
                        <table className="table table-striped table-bordered">
