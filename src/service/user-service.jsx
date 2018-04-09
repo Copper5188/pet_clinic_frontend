@@ -42,7 +42,7 @@ class User{
 	getUserList(curPage){
 		return _nn.request({
 			type : 'get',
-			url  : 'http://192.168.1.101/users/allList?pageSize=10&curPage=' + (curPage*1 - 1),
+			url  : 'http://192.168.1.101:5188/users/allList?pageSize=10&curPage=' + (curPage*1 - 1),
 		})
 
 	}

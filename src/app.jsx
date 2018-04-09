@@ -1,15 +1,16 @@
 
-import React    	from 'react';
-import ReactDOM 	from 'react-dom';
+import React    		 from 'react';
+import ReactDOM 		 from 'react-dom';
 import { BrowserRouter as Router,Switch,Redirect,Route,Link } from 'react-router-dom'
 
-import Layout  		from 'component/layout/index.jsx';
+import Layout  			 from 'component/layout/index.jsx';
 //页面
 import Home     		 from 'page/home/index.jsx';
 import Login    		 from 'page/login/index.jsx';
 import UserList   		 from 'page/user/index.jsx';
 import Disease_kind 	 from 'page/disease_kind/index.jsx';
 import Disease_kind_save from 'page/disease_kind/save.jsx';
+import Disease_kind_edit from 'page/disease_kind/edit.jsx';
 
 class App extends React.Component{
 	render(){
@@ -24,6 +25,7 @@ class App extends React.Component{
 				    		<Route path="/user/index" component={UserList}/>	
 				    		<Route path="/disease_kind/index" component={Disease_kind}/>
 				    		<Route path="/disease_kind/save"  component={Disease_kind_save}/>
+				    		<Route path="/disease_kind/edit/:dkid"  component={Disease_kind_edit}/>
 				    		<Route path="/user/index" component={UserList}/>
 							{/* <Route path="/department" component={Homet}/>
 							<Route path="/inhospital" component={Home}/>
