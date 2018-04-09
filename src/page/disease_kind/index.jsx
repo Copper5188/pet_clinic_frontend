@@ -41,7 +41,7 @@ class DiseaseKind extends React.Component{
 //如果是搜索的话传入搜索和关键字
         if(this.state.listType === 'search'){
             listParam.searchType = this.state.searchType;
-            listParam.keyword    = this.state.searchkeword;
+            listParam.keyword    = this.state.searchKeyword;
         }
         //alert(JSON.stringify(listParam));
         _diseasek.getDiseaseKind(listParam).then(res => {  //this.state.curPage
