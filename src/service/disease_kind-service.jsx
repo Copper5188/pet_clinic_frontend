@@ -11,13 +11,20 @@ class DiseaseK{
         //alert(JSON.stringify(listParam));
         let url     = '',
             data    = {};
+
         if (listParam.listType === 'list'){
            // alert(listParam.curPage);
             url                        ='http://192.168.1.101:5188/dikind/allList?pageSize=10&curPage=' + (listParam.curPage*1 - 1);
             //data.curPage               =listParam.curPage;
         }else if (listParam.listType ==='search'){
-            url                        ='http://192.168.1.101:5188/dikind/allList/%E7%94%B7%E7%A7%91%E7%97%85';
+            if (listParam.searchType ==='dikind_id'){
+            url                        ="http://192.168.1.101:5188/dikind/find?dikind_id=7";
             data.curPage               =listParam.curPage;
+            }
+                else{
+                    url                        ="http://192.168.1.101:5188/dikind/find?dikind_name=" + encodeURI(listParam.keyword);
+                    data.curPage               =listParam.curPage;
+                }
            // data[listParam.searchType] =listParam.keyword;
         }
         return _nn.request({
