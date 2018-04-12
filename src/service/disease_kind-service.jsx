@@ -14,15 +14,15 @@ class DiseaseK{
 
         if (listParam.listType === 'list'){
            // alert(listParam.curPage);
-            url                        ='http://192.168.1.101:5188/dikind/allList?pageSize=10&curPage=' + (listParam.curPage*1 - 1);
+            url                        ='http://111.231.84.129:5188/dikind/allList?pageSize=10&curPage=' + (listParam.curPage*1 - 1);
             //data.curPage               =listParam.curPage;
         }else if (listParam.listType ==='search'){
             if (listParam.searchType ==='dikind_id'){
-            url                        ="http://192.168.1.101:5188/dikind/find?dikind_id=" + listParam.keyword;
+            url                        ="http://111.231.84.129:5188/dikind/find?dikind_id=" + listParam.keyword;
             data.curPage               =listParam.curPage;
             }
                 else{
-                    url                        ="http://192.168.1.101:5188/dikind/find?dikind_name=" + encodeURI(listParam.keyword);
+                    url                        ="http://111.231.84.129:5188/dikind/find?dikind_name=" + encodeURI(listParam.keyword);
                     data.curPage               =listParam.curPage;
                 }
            // data[listParam.searchType] =listParam.keyword;
@@ -38,7 +38,7 @@ class DiseaseK{
     getDiseasekindinfo(dikind_id){
         return _nn.request({
             type : 'get',
-            url  : 'http://192.168.1.101:5188/dikind/find?dikind_id=' + dikind_id  
+            url  : 'http://111.231.84.129:5188/dikind/find?dikind_id=' + dikind_id  
             });
     }
 
@@ -46,12 +46,12 @@ class DiseaseK{
     getDiseaseKindDelete(dikind_id){
         return _nn.request({
             type : 'post',
-            url  : 'http://192.168.1.101:5188/dikind/delDikind',
+            url  : 'http://111.231.84.129:5188/dikind/delDikind',
             data :{
                    "data": {
                         "dikind_id": dikind_id,
-                        "dikind_name": dikind_name,
-                        "dikind_des": dikind_des  
+                       // "dikind_name": dikind_name,
+                        //"dikind_des": dikind_des  
                             }
                     }
             });
@@ -61,7 +61,7 @@ class DiseaseK{
    saveDiseasek(diseasekind){
         return _nn.request({
             type : 'post',
-            url  : 'http://192.168.1.101:5188/dikind/addDikind',
+            url  : 'http://111.231.84.129:5188/dikind/addDikind',
             data :{
                    "data": {
                      'dikind_name': diseasekind.dikind_name,
@@ -77,7 +77,7 @@ class DiseaseK{
     // alert(JSON.stringify(diseasekind));
         return _nn.request({
             type : 'post',
-            url  : 'http://192.168.1.101:5188/dikind/modifyDikind',
+            url  : 'http://111.231.84.129:5188/dikind/modifyDikind',
             data :{
                    "data": {
                      'dikind_id'  : diseasekind.dikind_id,
@@ -97,7 +97,7 @@ class DiseaseK{
 getFirstCategoryList(parentCategoryId){
         return _nn.request({
             type : 'get',
-            url  : 'http://192.168.1.101:5188/dikind/allList',
+            url  : 'http://111.231.84.129:5188/dikind/allList',
             data :{
                    "data": {
                         "dikind_id": parentCategoryId || 0     
@@ -110,7 +110,7 @@ getSecondCategoryList(parentCategoryId){
     //alert(parentCategoryId)
         return _nn.request({
             type : 'get',
-            url  : 'http://192.168.1.101:5188/diname/find?dikind_id=' + parentCategoryId,
+            url  : 'http://111.231.84.129:5188/diname/find?dikind_id=' + parentCategoryId,
             data :{
                    "data": {
                         "dikind_id": parentCategoryId || 0     
