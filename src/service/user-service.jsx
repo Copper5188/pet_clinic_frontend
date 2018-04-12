@@ -11,7 +11,7 @@ class User{
        	type : 'post',
        	url  : 'http://111.231.84.129:5188/login',
        	//type: 'get',
-       	//url: 'http://localhost:5188/users/allList?pageSize=1&curPage=0'
+       	//url: 'http://192.168.1.101:5188/users/allList?pageSize=1&curPage=0'
        	data : loginInfo
        });
 	}
@@ -38,6 +38,12 @@ class User{
 			msg: '验证通过'
 		}
 	}
+	// logout(){
+	// 	return _mm.request({
+	// 		type : 'post',
+	// 		url  : '/user/logout.do',
+	// 	});
+	// }
 
 	getUserList(curPage){
 		return _nn.request({

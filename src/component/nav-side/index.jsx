@@ -93,14 +93,14 @@ class SideNav extends React.Component{
                         </li>
 
                         <li>
-                            <NavLink exact to="/disease_name" activeClassName="active-menu">
+                            <NavLink exact to="/disease_name/index" activeClassName="active-menu">
                                 <i className="fa fa-bar-chart-o"></i>
                                 <span>病名管理</span>
                             </NavLink>
                         </li>
 
                         <li>
-                            <NavLink exact to="/disease_case" activeClassName="active-menu">
+                            <NavLink exact to="/disease_case/index" activeClassName="active-menu">
                                 <i className="fa fa-bar-chart-o"></i>
                                 <span>病例管理</span>
                             </NavLink>
@@ -108,7 +108,7 @@ class SideNav extends React.Component{
 
 
                         <li>
-                            <NavLink exact to="/exam_question" activeClassName="active-menu">
+                            <NavLink exact to="/exam_question/index" activeClassName="active-menu">
                                 <i className="fa fa-bar-chart-o"></i>
                                 <span>考题管理</span>
                             </NavLink>
