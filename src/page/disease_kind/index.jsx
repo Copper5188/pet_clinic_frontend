@@ -133,7 +133,7 @@ Deletedikind(e,dikind_id){
                                          <td>{dikind.dikind_des}</td>
                                          <td> 
                                              <Link className="opear" to = { `/disease_kind/detail/${dikind.dikind_id}`}>详情</Link>
-                                             <Link className="opear" to = { `/disease_kind/save/${dikind.dikind_id}`}>编辑</Link>                                                      
+                                             <Link className="opear" to = { `/disease_kind/edit/${dikind.dikind_id}`}>编辑</Link>                                                      
                                          </td>
                                          <td>
                                             <button className="btn btn-xs btn-warning" onClick={(e) => {this.Deletedikind(e,dikind.dikind_id)}}>删除</button>
