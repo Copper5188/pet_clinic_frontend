@@ -371,7 +371,7 @@ text-decoration: none;
 color: #319DB5 !important;
 background: transparent;
 }
-.top-navbar .nav > li:hover.dropdown-menu{
+.top-navbar .nav > li:hover .dropdown-menu{
   display: block;
 }
 .top-navbar .dropdown-menu{

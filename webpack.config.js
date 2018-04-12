@@ -105,7 +105,13 @@ module.exports = {
     	port: 8081,
       historyApiFallback: {
         index:'/dist/index.html'
-      },
+	  },
+	  proxy :{
+		  'user/logout.do' :{
+			  target:'http://192.168.1.101:5188',
+			  changeOrigin:true
+		  }
+	  }
 
      
    }
