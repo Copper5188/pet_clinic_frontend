@@ -30,7 +30,7 @@ class SideNav extends React.Component{
                         </li>
                         
                         <li>
-                            <NavLink to="/user" activeClassName="active-menu">
+                            <NavLink to="/user_management/index" activeClassName="active-menu">
                                 <i className="fa fa-bar-chart-o"></i>
                                 <span>用户管理</span>
                             </NavLink>
@@ -43,22 +43,22 @@ class SideNav extends React.Component{
                             </NavLink>
                             <ul className="nav nav-second-level collapse in">
                                 <li>
-                                    <NavLink to="/department" activeClassName="active-menu">科室管理</NavLink>
+                                    <NavLink to="/function_department/index" activeClassName="active-menu">科室管理</NavLink>
                                 </li>
                                 <li>
-                                    <NavLink to="/inhospital" activeClassName="active-menu">住院信息管理</NavLink>
+                                    <NavLink to="/function_inhospital/index" activeClassName="active-menu">住院信息管理</NavLink>
                                 </li>
                                 <li>
-                                    <NavLink to="/medicine" activeClassName="active-menu">药品管理</NavLink>
+                                    <NavLink to="/function_medicine/index" activeClassName="active-menu">药品管理</NavLink>
                                 </li>
                                 <li>
-                                    <NavLink to="/fee" activeClassName="active-menu">收费管理</NavLink>
+                                    <NavLink to="/function_fee/index" activeClassName="active-menu">收费管理</NavLink>
                                 </li>
                                 <li>
-                                    <NavLink to="/assay" activeClassName="active-menu">化验项目管理</NavLink>
+                                    <NavLink to="/function_assay/index" activeClassName="active-menu">化验项目管理</NavLink>
                                 </li>
                                 <li>
-                                    <NavLink to="/vaccine" activeClassName="active-menu">疫苗管理</NavLink>
+                                    <NavLink to="/function_vaccine/index" activeClassName="active-menu">疫苗管理</NavLink>
                                 </li>
                             </ul>
                         </li>
