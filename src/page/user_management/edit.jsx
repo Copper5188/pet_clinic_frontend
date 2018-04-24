@@ -37,7 +37,7 @@ class UserManagementEdit extends React.Component{
     loadUsermanagementinfo(){
             _userm.getUsermanagementinfo(this.state.user_id).then( res => {
             //res = JSON.stringify(res);
-            this.setState({user_name : res.data[0].user_name});//解析字段要一条条写
+            this.setState({username : res.data[0].username});//解析字段要一条条写
             this.setState({password  : res.data[0].password});
             this.setState({create_time  : res.data[0].create_time});
             this.setState({authority  : res.data[0].authority});

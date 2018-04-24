@@ -1,6 +1,6 @@
 import React 	  from 'react';
 import Mutil      from 'util/mm.jsx';
-import User       from 'service/user-service.jsx'
+import User       from 'service/user_management-service.jsx'
 
 const _mm 	= new Mutil();
 const _user = new User();

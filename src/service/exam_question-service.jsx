@@ -14,15 +14,15 @@ class ExamQ{
 
         if (listParam.listType === 'list'){
            // alert(listParam.curPage);
-            url                        ='http://111.231.84.129:5188/test/allList?pageSize=10&curPage=' + (listParam.curPage*1 - 1);
+            url                        ='http://192.168.1.101:5188/test/allList?pageSize=10&curPage=' + (listParam.curPage*1 - 1);
             //data.curPage               =listParam.curPage;
         }else if (listParam.listType ==='search'){
             if (listParam.searchType ==='test_id'){
-            url                        ="http://111.231.84.129:5188/test/find?test_id=" + listParam.keyword;
+            url                        ="http://192.168.1.101:5188/test/find?test_id=" + listParam.keyword;
             data.curPage               =listParam.curPage;
             }
                 else{
-                    url                        ="http://111.231.84.129:5188/test/find?test_question=" + encodeURI(listParam.keyword);
+                    url                        ="http://192.168.1.101:5188/test/find?test_question=" + encodeURI(listParam.keyword);
                     data.curPage               =listParam.curPage;
                 }
            // data[listParam.searchType] =listParam.keyword;
@@ -38,7 +38,7 @@ class ExamQ{
     getExamquestioninfo(test_id){
         return _nn.request({
             type : 'get',
-            url  : 'http://111.231.84.129:5188/test/find?test_id=' + test_id  
+            url  : 'http://192.168.1.101:5188/test/find?test_id=' + test_id  
             });
     }
 
@@ -46,7 +46,7 @@ class ExamQ{
     getExamQuestionDelete(test_id){
         return _nn.request({
             type : 'post',
-            url  : 'http://111.231.84.129:5188/test/delTest',
+            url  : 'http://192.168.1.101:5188/test/delTest',
             data :{
                    "data": {
                         "test_id": test_id,
@@ -60,7 +60,7 @@ class ExamQ{
    saveExamq(examquestion){
         return _nn.request({
             type : 'post',
-            url  : 'http://111.231.84.129:5188/test/addTest',
+            url  : 'http://192.168.1.101:5188/test/addTest',
             data :{
                    "data": {
                      'test_question': examquestion.test_question,
@@ -80,7 +80,7 @@ class ExamQ{
     // alert(JSON.stringify(examquestion));
         return _nn.request({
             type : 'post',
-            url  : 'http://111.231.84.129:5188/test/modifyTest',
+            url  : 'http://192.168.1.101:5188/test/modifyTest',
             data :{
                    "data": {
                      'test_id'  : examquestion.test_id,
@@ -100,7 +100,7 @@ class ExamQ{
 // getFirstCategoryList(parentCategoryId){
 //         return _nn.request({
 //             type : 'get',
-//             url  : 'http://111.231.84.129:5188/dikind/allList',
+//             url  : 'http://192.168.1.101:5188/dikind/allList',
 //             data :{
 //                    "data": {
 //                         "dikind_id": parentCategoryId || 0     
@@ -113,7 +113,7 @@ class ExamQ{
 //     //alert(parentCategoryId)
 //         return _nn.request({
 //             type : 'get',
-//             url  : 'http://111.231.84.129:5188/diname/find?dikind_id=' + parentCategoryId,
+//             url  : 'http://192.168.1.101:5188/diname/find?dikind_id=' + parentCategoryId,
 //             data :{
 //                    "data": {
 //                         "dikind_id": parentCategoryId || 0     

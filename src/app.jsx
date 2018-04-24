@@ -58,7 +58,7 @@ class App extends React.Component{
 							<Route path="/exam_question/index" component={Exam_question}/>
 				    		<Route path="/exam_question/save"  component={Exam_question_save}/>
 				    		<Route path="/exam_question/edit/:tsid"  component={Exam_question_edit}/>
-				    		<Route path="/user/index" component={UserList}/>
+				    
 
 				    		<Route path="/disease_name/index" component={Disease_name}/>
 				  
@@ -69,7 +69,7 @@ class App extends React.Component{
 							<Route path="/fee" component={Home}/>
 							<Route path="/assay" component={Home}/>
 							<Route path="/vaccine" component={Home}/> */}
-							<Redirect exact from ="/user" to ="/user/index"/>
+							<Redirect exact from ="/user" to ="/user_management/index"/>
 							
 				    	</Switch>
 				  	</Layout>

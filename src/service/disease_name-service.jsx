@@ -52,7 +52,7 @@ class DiseaseN{
     getDiseasenameinfo(diname_id){
         return _nn.request({
             type : 'get',
-            url  : 'http://111.231.84.129:5188/diname/find?diname_id=' + diname_id  
+            url  : 'http://192.168.1.101:5188/diname/find?diname_id=' + diname_id  
             });
     }
 
@@ -60,7 +60,7 @@ class DiseaseN{
    saveDiseasen(diseasename){
         return _nn.request({
             type : 'post',
-            url  : 'http://111.231.84.129:5188/diname/addDiname',
+            url  : 'http://192.168.1.101:5188/diname/addDiname',
             data :{
                    "data": {
                      'diname_name': diseasename.diname_name,
@@ -77,7 +77,7 @@ class DiseaseN{
     // alert(JSON.stringify(diseasename));
         return _nn.request({
             type : 'post',
-            url  : 'http://111.231.84.129:5188/diname/modifyDiname',
+            url  : 'http://192.168.1.101:5188/diname/modifyDiname',
             data :{
                    "data": {
                      'diname_id'  : diseasename.diname_id,
@@ -97,7 +97,7 @@ class DiseaseN{
 getFirstCategoryList(parentCategoryId){
         return _nn.request({
             type : 'get',
-            url  : 'http://111.231.84.129:5188/diname/allList',
+            url  : 'http://192.168.1.101:5188/diname/allList',
             data :{
                    "data": {
                         "diname_id": parentCategoryId || 0     
@@ -110,7 +110,7 @@ getSecondCategoryList(parentCategoryId){
     //alert(parentCategoryId)
         return _nn.request({
             type : 'get',
-            url  : 'http://111.231.84.129:5188/diname/find?diname_id=' + parentCategoryId,
+            url  : 'http://192.168.1.101:5188/diname/find?diname_id=' + parentCategoryId,
             data :{
                    "data": {
                         "diname_id": parentCategoryId || 0     
