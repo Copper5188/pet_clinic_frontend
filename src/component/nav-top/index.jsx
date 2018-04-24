@@ -24,7 +24,7 @@ class TopNav extends React.Component{
     onLogout(){
         return _mm.request({
 			type : 'get',
-			url  : 'http://192.168.1.101:5188/login',
+			url  : 'http://111.231.84.129:5188/login',
 		})
     //     _user.logout().then(res =>{
     //         _mm.removeStorage('userInfo');

@@ -80,7 +80,7 @@ class FunctionInhospitalEdit extends React.Component{
                           <input  className="form-control"  
                           placeholder="请输入入院时间yyyy-mm-dd"
                           name="stay_starttime"
-                          value={this.state.stay_starttime}
+                          value={this.state.stay_starttime}  //this.state.dataFormat(stay.stay_starttime)
                             onChange={(e) => this.onValueChange(e)}/>
                         </div>
                       </div>

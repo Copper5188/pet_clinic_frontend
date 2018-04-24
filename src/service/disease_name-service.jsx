@@ -14,22 +14,22 @@ class DiseaseN{
 
         if (listParam.listType === 'list'){
            // alert(listParam.curPage);
-            url                        ='http://192.168.1.101:5188/diname/allList?pageSize=10&curPage=' + (listParam.curPage*1 - 1);
+            url                        ='http://111.231.84.129:5188/diname/allList?pageSize=10&curPage=' + (listParam.curPage*1 - 1);
             //data.curPage               =listParam.curPage;
         }else if (listParam.listType ==='search'){
             if (listParam.searchType ==='diname_id'){
-            url                        ="http://192.168.1.101:5188/diname/find?diname_id=7";
+            url                        ="http://111.231.84.129:5188/diname/find?diname_id=7";
             data.curPage               =listParam.curPage;
             }
                 else{
-                    url                        ="http://192.168.1.101:5188/diname/find?diname_name=" + encodeURI(listParam.keyword);
+                    url                        ="http://111.231.84.129:5188/diname/find?diname_name=" + encodeURI(listParam.keyword);
                     data.curPage               =listParam.curPage;
                 }
            // data[listParam.searchType] =listParam.keyword;
         }
         return _nn.request({
             type : 'get',
-            url  :  url,//'http://192.168.1.101:5188/diname/allList?pageSize=10&curPage=' + (curPage*1 - 1),
+            url  :  url,//'http://111.231.84.129:5188/diname/allList?pageSize=10&curPage=' + (curPage*1 - 1),
             //data :  data
         });
 
@@ -39,7 +39,7 @@ class DiseaseN{
     getDiseaseNameDelete(diname_id){
         return _nn.request({
             type : 'post',
-            url  : 'http://192.168.1.101:5188/diname/delDiname',
+            url  : 'http://111.231.84.129:5188/diname/delDiname',
             data :{
                    "data": {
                         "diname_id": diname_id     
@@ -48,11 +48,11 @@ class DiseaseN{
             });
     }
 
-//拿商品信息来编辑
+//拿病名信息来编辑
     getDiseasenameinfo(diname_id){
         return _nn.request({
             type : 'get',
-            url  : 'http://192.168.1.101:5188/diname/find?diname_id=' + diname_id  
+            url  : 'http://111.231.84.129:5188/diname/find?diname_id=' + diname_id  
             });
     }
 
@@ -60,7 +60,7 @@ class DiseaseN{
    saveDiseasen(diseasename){
         return _nn.request({
             type : 'post',
-            url  : 'http://192.168.1.101:5188/diname/addDiname',
+            url  : 'http://111.231.84.129:5188/diname/addDiname',
             data :{
                    "data": {
                      'diname_name': diseasename.diname_name,
@@ -77,7 +77,7 @@ class DiseaseN{
     // alert(JSON.stringify(diseasename));
         return _nn.request({
             type : 'post',
-            url  : 'http://192.168.1.101:5188/diname/modifyDiname',
+            url  : 'http://111.231.84.129:5188/diname/modifyDiname',
             data :{
                    "data": {
                      'diname_id'  : diseasename.diname_id,
@@ -97,7 +97,7 @@ class DiseaseN{
 getFirstCategoryList(parentCategoryId){
         return _nn.request({
             type : 'get',
-            url  : 'http://192.168.1.101:5188/diname/allList',
+            url  : 'http://111.231.84.129:5188/diname/allList',
             data :{
                    "data": {
                         "diname_id": parentCategoryId || 0     
@@ -110,7 +110,7 @@ getSecondCategoryList(parentCategoryId){
     //alert(parentCategoryId)
         return _nn.request({
             type : 'get',
-            url  : 'http://192.168.1.101:5188/diname/find?diname_id=' + parentCategoryId,
+            url  : 'http://111.231.84.129:5188/diname/find?diname_id=' + parentCategoryId,
             data :{
                    "data": {
                         "diname_id": parentCategoryId || 0     

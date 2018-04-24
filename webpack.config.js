@@ -108,7 +108,7 @@ module.exports = {
 	  },
 	  proxy :{
 		  'user_management/logout.do' :{
-			  target:'http://192.168.1.101:5188',
+			  target:'http://111.231.84.129:5188',
 			  changeOrigin:true
 		  }
 	  }

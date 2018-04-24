@@ -62,7 +62,7 @@ class DiseaseKindSave extends React.Component{
 		//}
 		
 		let formData = new FormData();
-    formData.append("file",document.getElementById('pic').files[0]);
+		formData.append("file",document.getElementById('pic').files[0]);
 		// let file = $('#pic')[0].files[0];
 		// console.log("lllllll:" + file);
 		// formData.set("file",file);

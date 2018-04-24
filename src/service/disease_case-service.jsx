@@ -5,24 +5,24 @@ import Nutil      from 'util/nn.jsx';
 const _mm   = new Mutil();
 const _nn   = new Nutil();
 
-class DiseaseK{
+class DiseaseC{
 //拿列表、和搜索
-    getDiseaseKind(listParam){//curPage
+    getDiseaseCase(listParam){//curPage
         //alert(JSON.stringify(listParam));
         let url     = '',
             data    = {};
 
         if (listParam.listType === 'list'){
            // alert(listParam.curPage);
-            url                        ='http://111.231.84.129:5188/dikind/allList?pageSize=10&curPage=' + (listParam.curPage*1 - 1);
+            url                        ='http://111.231.84.129:5188/dicase/allList?pageSize=10&curPage=' + (listParam.curPage*1 - 1);
             //data.curPage               =listParam.curPage;
         }else if (listParam.listType ==='search'){
-            if (listParam.searchType ==='dikind_id'){
-            url                        ="http://111.231.84.129:5188/dikind/find?dikind_id=" + listParam.keyword;
+            if (listParam.searchType ==='dicase_id'){
+            url                        ="http://111.231.84.129:5188/dicase/find?dicase_id=" + listParam.keyword;
             data.curPage               =listParam.curPage;
             }
                 else{
-                    url                        ="http://111.231.84.129:5188/dikind/find?dikind_name=" + encodeURI(listParam.keyword);
+                    url                        ="http://111.231.84.129:5188/dicase/find?dicase_name=" + encodeURI(listParam.keyword);
                     data.curPage               =listParam.curPage;
                 }
            // data[listParam.searchType] =listParam.keyword;
@@ -35,21 +35,21 @@ class DiseaseK{
 
     }
 //拿病例信息来编辑
-    getDiseasekindinfo(dikind_id){
+    getDiseasecaseinfo(dicase_id){
         return _nn.request({
             type : 'get',
-            url  : 'http://111.231.84.129:5188/dikind/find?dikind_id=' + dikind_id  
+            url  : 'http://111.231.84.129:5188/dicase/find?dicase_id=' + dicase_id  
             });
     }
 
 //删除
-    getDiseaseKindDelete(dikind_id){
+    getDiseaseCaseDelete(dicase_id){
         return _nn.request({
             type : 'post',
-            url  : 'http://111.231.84.129:5188/dikind/delDikind',
+            url  : 'http://111.231.84.129:5188/dicase/delDicase',
             data :{
                    "data": {
-                        "dikind_id": dikind_id,
+                        "dicase_id": dicase_id,
                        // "dikind_name": dikind_name,
                         //"dikind_des": dikind_des  
                             }
@@ -59,13 +59,9 @@ class DiseaseK{
 //上传图片
 
    uploadPIC(formData){
-    //formData2.append("file",document.selectElementById('pic').val());
-        // let file = $('#pic')[0].files[0];
-        // console.log("iiiiiiii:" + file);
-        // formData2.append("file",file);
     return new Promise((resolve,reject)=>{$.ajax({
             type      : 'post',
-            url       : 'http://172.30.242.91:5188/dicase/addDicase',
+            url       : 'http://111.231.84.129:5188/dicase/addDicase',
             data : formData,
             cache: false,
             contentType: false,
@@ -95,54 +91,46 @@ class DiseaseK{
             }
         })
     });
-        // return _nn.request({
-        //     type : 'post',
-        //     url  : 'http://172.30.242.91:5188/dicase/addDicase',
-        //     data : formData,
-        //     cache: false, 
-        //     dataType:null,
-        //     contentType: false,
-        //     processData: false,
-        //     success: function (returndata) {  
-        //     console.log(returndata);  
-        // },
-        // error: function (returndata) {  
-        //     console.log(returndata);  
-        // }
-        //     })
     }
-//保存
-   saveDiseasek(diseasekind){
-        return _nn.request({
-            type : 'post',
-            url  : 'http://111.231.84.129:5188/dikind/addDikind',
-            data :{
-                   "data": {
-                     'dikind_name': diseasekind.dikind_name,
-                     'dikind_des' : diseasekind.dikind_des
 
-                            }
-                    }
-            });
-    }
 
 
 //修改
-   editDiseasek(diseasekind){
+   editDiseasec(formData){
     // alert(JSON.stringify(diseasekind));
-        return _nn.request({
-            type : 'post',
-            url  : 'http://111.231.84.129:5188/dikind/modifyDikind',
-            data :{
-                   "data": {
-                     'dikind_id'  : diseasekind.dikind_id,
-                     'dikind_name': diseasekind.dikind_name,
-                     'dikind_des' : diseasekind.dikind_des
+    return new Promise((resolve,reject)=>{$.ajax({
+        type      : 'post',
+        url       : 'http://111.231.84.129:5188/dicase/modifyDicase',
+        data : formData,
+        cache: false,
+        contentType: false,
+        processData: false,
+      
+        beforeSend: function (xhr) {
+        // //发送ajax请求之前向http的head里面加入验证信息
+            xhr.setRequestHeader("Access-Control-Allow-Origin", "*"); // 请求发起前在头部附加token
+        },
 
-                            }
-                    }
-            });
-    }
+
+
+        success(res){
+            //alert(JSON.stringify(res));
+            //请求成功
+            if('000' === res.code){
+                 typeof resolve === 'function' && resolve(res);
+                
+            }
+            else {
+                 typeof reject === 'function' && reject(res.msg || res.data);
+                 alert(res.msg);
+            }
+        },
+        error(err){
+            typeof reject === 'function' && reject(err.statusText);
+        }
+    })
+});
+}
     
     
 
@@ -176,7 +164,20 @@ getSecondCategoryList(parentCategoryId){
             });
     }
 
+// //保存
+// saveDiseasec(diseasecase){
+//     return _nn.request({
+//         type : 'post',
+//         url  : 'http://111.231.84.129:5188/dicase/addDicase',
+//         data :{
+//                "data": {
+//                  'dicase_name': diseasecase.dicase_name,
+//                  'dicase_des' : diseasecase.dicase_des
 
+//                         }
+//                 }
+//         });
+// }
 
 
 
@@ -187,4 +188,4 @@ getSecondCategoryList(parentCategoryId){
 }
 
 
-export default DiseaseK;
+export default DiseaseC;
