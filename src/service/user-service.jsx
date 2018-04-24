@@ -45,13 +45,33 @@ class User{
 	// 	});
 	// }
 
-	getUserList(curPage){
-		return _nn.request({
-			type : 'get',
-			url  : 'http://111.231.84.129:5188/users/allList?pageSize=10&curPage=' + (curPage*1 - 1),
-		})
+	getUserList(listParam){//curPage
+        //alert(JSON.stringify(listParam));
+        let url     = '',
+            data    = {};
 
-	}
+        if (listParam.listType === 'list'){
+           // alert(listParam.curPage);
+            url                        ='http://111.231.84.129:5188/users/allList?pageSize=10&curPage=' + (listParacm.curPage*1 - 1);
+            //data.curPage               =listParam.curPage;
+        }else if (listParam.listType ==='search'){
+            if (listParam.searchType ==='user_id'){
+            url                        ="http://111.231.84.129:5188/user/find?user_id=" + listParam.keyword;
+            data.curPage               =listParam.curPage;
+            }
+                else{
+                    url                        ="http://111.231.84.129:5188/user/find?user_name=" + encodeURI(listParam.keyword);
+                    data.curPage               =listParam.curPage;
+                }
+           // data[listParam.searchType] =listParam.keyword;
+        }
+        return _nn.request({
+            type : 'get',
+            url  :  url,//'http://192.168.1.101:5188/user/allList?pageSize=10&curPage=' + (curPage*1 - 1),
+            //data :  data
+        });
+
+    }
 }
 
 export default User;

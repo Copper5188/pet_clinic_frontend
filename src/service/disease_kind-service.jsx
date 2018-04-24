@@ -56,7 +56,61 @@ class DiseaseK{
                     }
             });
     }
+//上传图片
 
+   uploadPIC(formData){
+    //formData2.append("file",document.selectElementById('pic').val());
+        // let file = $('#pic')[0].files[0];
+        // console.log("iiiiiiii:" + file);
+        // formData2.append("file",file);
+    return new Promise((resolve,reject)=>{$.ajax({
+            type      : 'post',
+            url       : 'http://172.30.242.91:5188/dicase/addDicase',
+            data : formData,
+            cache: false,
+            contentType: false,
+            processData: false,
+          
+            beforeSend: function (xhr) {
+            // //发送ajax请求之前向http的head里面加入验证信息
+                xhr.setRequestHeader("Access-Control-Allow-Origin", "*"); // 请求发起前在头部附加token
+            },
+
+
+
+            success(res){
+                //alert(JSON.stringify(res));
+                //请求成功
+                if('000' === res.code){
+                     typeof resolve === 'function' && resolve(res);
+                    
+                }
+                else {
+                     typeof reject === 'function' && reject(res.msg || res.data);
+                     alert(res.msg);
+                }
+            },
+            error(err){
+                typeof reject === 'function' && reject(err.statusText);
+            }
+        })
+    });
+        // return _nn.request({
+        //     type : 'post',
+        //     url  : 'http://172.30.242.91:5188/dicase/addDicase',
+        //     data : formData,
+        //     cache: false, 
+        //     dataType:null,
+        //     contentType: false,
+        //     processData: false,
+        //     success: function (returndata) {  
+        //     console.log(returndata);  
+        // },
+        // error: function (returndata) {  
+        //     console.log(returndata);  
+        // }
+        //     })
+    }
 //保存
    saveDiseasek(diseasekind){
         return _nn.request({
@@ -71,6 +125,7 @@ class DiseaseK{
                     }
             });
     }
+
 
 //修改
    editDiseasek(diseasekind){

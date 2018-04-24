@@ -28,6 +28,7 @@ import Exam_question_edit from 'page/exam_question/edit.jsx';
 
 import Disease_name 	 from 'page/disease_name/index.jsx';
 
+
 class App extends React.Component{
 	render(){
 		return(
@@ -38,7 +39,7 @@ class App extends React.Component{
 					<Layout>
 						<Switch>
 				    		<Route exact path="/" component={Home}/>
-				    		<Route path="/user/index" component={UserList}/>	
+
 				    		<Route path="/disease_kind/index" component={Disease_kind}/>
 				    		<Route path="/disease_kind/save"  component={Disease_kind_save}/>
 				    		<Route path="/disease_kind/edit/:dkid"  component={Disease_kind_edit}/>
@@ -58,6 +59,10 @@ class App extends React.Component{
 				    		<Route path="/exam_question/save"  component={Exam_question_save}/>
 				    		<Route path="/exam_question/edit/:tsid"  component={Exam_question_edit}/>
 				    		<Route path="/user/index" component={UserList}/>
+
+				    		<Route path="/disease_name/index" component={Disease_name}/>
+				  
+				    		
 							{/* <Route path="/department" component={Homet}/>
 							<Route path="/inhospital" component={Home}/>
 							<Route path="/medicine" component={Home}/>

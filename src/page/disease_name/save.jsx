@@ -16,10 +16,7 @@ class DiseaseKindSave extends React.Component{
 		}
 	}
 
-	uploadPIC(e){
-		this.setState({formData: new FormData(e)})
-		//let formData = new FormData(e);
-	}
+
 
 	onValueChange(e){
 		let name =e.target.name,
@@ -35,41 +32,32 @@ class DiseaseKindSave extends React.Component{
 
 	onSubmit(){
 		alert($('#sd').val())
-		console.log(this.state.formData)
 		let diseasekind ={
 			dikind_name : this.state.dikind_name,
 			dikind_des 	: this.state.dikind_des,
+			dikind_pic  : this.state.dikind_pic
 			//id :this.state.secondCategoryID
 		};
-		
 		//上传图片
-		//function doUpload() {
-    	//	var formData = new FormData($("#uploadForm")[0]);  
-    	//	$.ajax({  
-        //		url: 'http://localhost:9001/uploadImg',
-        //		type: 'POST',  
-        //		data: formData,  
-        //		cache: false,  
-        //		contentType: false,  
-        //		processData: false,  
-        //		success: function (returndata) {  
-        //    		console.log(returndata);  
-        //		},
-        //		error: function (returndata) {  
-        //    		console.log(returndata);  
-        //		}
-    	//});  
-		//}
-		
-		let formData = new FormData();
-    formData.append("file",document.getElementById('pic').files[0]);
-		// let file = $('#pic')[0].files[0];
-		// console.log("lllllll:" + file);
-		// formData.set("file",file);
-		//let formData = new formData($('#uploadForm'));
-		_diseasek.uploadPIC(formData).then((res)=> {
-			alert('图片上传成功');
-		})
+		function doUpload() {
+    		var formData = new FormData($("#uploadForm")[0]);  
+    		$.ajax({  
+        		url: 'http://localhost:9001/uploadImg',
+        		type: 'POST',  
+        		data: formData,  
+        		cache: false,  
+        		contentType: false,  
+        		processData: false,  
+        		success: function (returndata) {  
+            		console.log(returndata);  
+        		},
+        		error: function (returndata) {  
+            		console.log(returndata);  
+        		}
+    	});  
+		}
+	
+
 
 		_diseasek.saveDiseasek(diseasekind).then((res)=> {
 			alert('信息上传成功');
@@ -107,17 +95,15 @@ class DiseaseKindSave extends React.Component{
 
 
 
-					  <div className="form-group" >
+					  <div className="form-group">
 					  	<label className="col-md-2 control-label">病种图片</label>
-					  	<div className="col-md-5">
-							<form id= "uploadForm" onChange={(e) => this.uploadPIC(e)}>
-								<input type="file" name="file" id="pic" />
-                        	{/*  <input type="file" name="file" id="pic"/>*/} 
-                        	{/*
+					  	<div className="col-md-10">
+							<form id= "uploadForm">
                         	  <div className="Section">
+                                {/* < img class="ProfileHeader-image ProfileHeader-image--clickable" src="/profile/profile-9.png"> */}
                                 <input type="text" name="text" />
-                              </div>
-                        	 */}
+                                <input type="file" name="file" id="pic"/> 
+                        	 </div>
                     	   </form>
 					  	</div>
 					 </div>
