@@ -1,10 +1,10 @@
 import React  			from 'react';
 import Nutil            from 'util/nn.jsx';
-import DiseaseK     	from 'service/disease_kind-service.jsx';
+import DiseaseN     	from 'service/disease_name-service.jsx';
 
 import './category-selector.scss';
 const _nn         = new Nutil();
-const _diseasek   = new DiseaseK();
+const _diseasen   = new DiseaseN();
 
 class CategorySelector extends React.Component{
 	constructor(props){
@@ -21,7 +21,7 @@ class CategorySelector extends React.Component{
 	}
 	//加载一级分类
 	loadFirstCategory(){
-		_diseasek.getFirstCategoryList().then(res => {
+		_diseasen.getFirstCategoryList().then(res => {
 			this.setState({
 				firstCategoryList : res.data
 			});
@@ -29,14 +29,14 @@ class CategorySelector extends React.Component{
 
 	}
 
-	//加载二级
-	loadSecondCategory(){
-		_diseasek.getSecondCategoryList(this.state.firstCategoryId).then(res => {
-			this.setState({
-				secondCategoryList : res.data
-			});
-		});
-	}
+	// //加载二级
+	// loadSecondCategory(){
+	// 	_diseasek.getSecondCategoryList(this.state.firstCategoryId).then(res => {
+	// 		this.setState({
+	// 			secondCategoryList : res.data
+	// 		});
+	// 	});
+	// }
 
 	//选择一级品类
 	onFirstCategoryChange(e){
@@ -46,23 +46,28 @@ class CategorySelector extends React.Component{
 			secondCategoryId   :0,
 			secondCategoryList :[]
 
-		},() => {
-			//更新二级
-			this.loadSecondCategory();
-			//alert('second',firstCategoryId);
-		});
+		},()=>{
+		// ,() => {
+		// 	//更新二级
+		// 	this.loadSecondCategory();
+		// 	//alert('second',firstCategoryId);
+		// }
+		alert(this.state.firstCategoryId);
+	}
+	
+	);
 	}
 
-	//选择二级品类
-	onSecondCategoryChange(e){
-		let newValue =e.target.value || 0;
-		this.setState({
-			secondCategoryId    : newValue,
+	// //选择二级品类
+	// onSecondCategoryChange(e){
+	// 	let newValue =e.target.value || 0;
+	// 	this.setState({
+	// 		secondCategoryId    : newValue,
 			
-		},() => {
-			alert(this.state.secondCategoryId);	//很重要传他传他
-		});
-	}
+	// 	},() => {
+	// 		alert(this.state.secondCategoryId);	//很重要传他传他
+	// 	});
+	// }
 
 	
 
@@ -77,7 +82,7 @@ class CategorySelector extends React.Component{
 	render(){
 		return(
 			<div className="col-md-10">
-				<select className="form-control cate-select"
+				<select name="" id="firstCategoryId" className="form-control cate-select"
 				onChange = {(e) => this.onFirstCategoryChange(e)}>
 					<option value="">请选择所属病种</option>
 					{

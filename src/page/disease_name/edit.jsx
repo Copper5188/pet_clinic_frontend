@@ -1,18 +1,18 @@
 import React                from 'react';
 import Nutil                from 'util/nn.jsx';
-import DiseaseK             from 'service/disease_kind-service.jsx';
+import DiseaseN             from 'service/disease_name-service.jsx';
 import CategorySelector     from './category-selector.jsx';
 
 
 const _nn         = new Nutil();
-const _diseasek   = new DiseaseK();
-class DiseaseKindEdit extends React.Component{
+const _diseasen   = new DiseaseN();
+class DiseaseNameEdit extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            dikind_id   : this.props.match.params.dkid,
-            dikind_name : ' ',
-            dikind_des  : ' ',
+            diname_id   : this.props.match.params.dnid,
+            diname_name : ' ',
+            diname_des  : ' ',
 
         }
     }
@@ -29,15 +29,15 @@ class DiseaseKindEdit extends React.Component{
     }
 
     componentDidMount(){
-        this.loadDiseasekindinfo();
+        this.loadDiseasenameinfo();
     }
 
 //edit的时候往页面里加信息
-    loadDiseasekindinfo(){
-            _diseasek.getDiseasekindinfo(this.state.dikind_id).then( res => {
+    loadDiseasenameinfo(){
+            _diseasen.getDiseasenameinfo(this.state.diname_id).then( res => {
             //res = JSON.stringify(res);
-            this.setState({dikind_name : res.data[0].dikind_name});//解析字段要一条条写
-            this.setState({dikind_des  : res.data[0].dikind_des});
+            this.setState({diname_name : res.data[0].diname_name});//解析字段要一条条写
+            this.setState({diname_des  : res.data[0].diname_des});
             //alert("load信息",this.state.dikind_id)
             });
              
@@ -45,40 +45,40 @@ class DiseaseKindEdit extends React.Component{
        
     
     onSubmit(){
-        let diseasekind ={
-            dikind_id   : this.state.dikind_id,
-            dikind_name : this.state.dikind_name,
-            dikind_des  : this.state.dikind_des
+        let diseasename ={
+            diname_id   : this.state.diname_id,
+            diname_name : this.state.diname_name,
+            diname_des  : this.state.diname_des
             //id :this.state.secondCategoryID
         };
         //alert(JSON.stringify(diseasekind));
-        _diseasek.editDiseasek(diseasekind).then((res)=> {
+        _diseasen.editDiseasen(diseasename).then((res)=> {
             alert('修改成功');
-            this.props.history.push('/disease_kind/index');
+            this.props.history.push('/disease_name/index');
         })
     }
     render(){
         return(
             <div id="page-wrapper">
-                <h1 className='page-header'>修改病种信息
+                <h1 className='page-header'>修改病名信息
                 </h1>
                     <div className="form-horizontal">
                       <div className="form-group">
-                        <label className="col-md-2 control-label">病种名称</label>
+                        <label className="col-md-2 control-label">病名名称</label>
                         <div className="col-md-5">
                           <input type="text" className="form-control" placeholder="请输入病种名称"
-                            name="dikind_name"
-                            value={this.state.dikind_name}
+                            name="diname_name"
+                            value={this.state.diname_name}
                             onChange={(e) => this.onValueChange(e)}/>
                         </div>
                       </div>
                       <div className="form-group">
-                        <label className="col-md-2 control-label">病种描述</label>
+                        <label className="col-md-2 control-label">病名描述</label>
                         <div className="col-md-5">
-                          <input  className="form-control"  
+                          <textarea rows="8" className="form-control"  
                           placeholder="请输入病种描述"
-                          name="dikind_des"
-                          value={this.state.dikind_des}
+                          name="diname_des"
+                          value={this.state.diname_des}
                             onChange={(e) => this.onValueChange(e)}/>
                         </div>
                       </div>
@@ -87,19 +87,7 @@ class DiseaseKindEdit extends React.Component{
                         <CategorySelector onCategoryChange={(categroyId) => this.onCategoryChange(categroyId)}/>
                       </div>
                      */} 
-                      <div className="form-group">
-                        <label className="col-md-2 control-label">病种图片</label>
-                        <div className="col-md-10">
-                                    xxxxx
-                        </div>
-                     </div>
-
-                    <div className="form-group">
-                        <label className="col-md-2 control-label">病种详情</label>
-                        <div className="col-md-10">
-                                    detail
-                        </div>
-                     </div>
+    
 
                       <div className="form-group">
                         <div className="col-md-offset-2 col-md-10">
@@ -113,4 +101,4 @@ class DiseaseKindEdit extends React.Component{
     }
 }
 
-export default DiseaseKindEdit;
+export default DiseaseNameEdit;

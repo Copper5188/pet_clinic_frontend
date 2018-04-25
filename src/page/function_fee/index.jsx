@@ -117,6 +117,9 @@ Deletefee(e,pay_id){
                           <tr>
                              <th width="8%">收费id</th>
                              <th width="8%">收费名称</th>
+                             <th width="8%">收费金额</th>
+                             <th width="8%">编辑</th>
+                             <th width="8%">删除</th>
                           </tr>
                          </thead>
                          <tbody>
@@ -127,11 +130,12 @@ Deletefee(e,pay_id){
                                     <tr key={index}>
                                          <td>{pay.pay_id}</td>
                                          <td>{pay.pay_name}</td>
+                                         <td>{pay.pay_amount}</td>
                                          <td> 
-                                             <Link className="opear" to = { `/function_fee/edit/${fee.pay_id}`}>编辑</Link>                                                      
+                                             <Link className="opear" to = { `/function_fee/edit/${pay.pay_id}`}>编辑</Link>                                                      
                                          </td>
                                          <td>
-                                            <button className="btn btn-xs btn-warning" onClick={(e) => {this.Deletemedicine(e,fee.pay_id)}}>删除</button>
+                                            <button className="btn btn-xs btn-warning" onClick={(e) => {this.Deletefee(e,pay.pay_id)}}>删除</button>
                                          </td>
                                     </tr>
                                  );

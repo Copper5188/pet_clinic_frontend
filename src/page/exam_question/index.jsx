@@ -114,15 +114,15 @@ class ExamQuestion extends React.Component{
                        <table className="table table-striped table-bordered">
                         <thead>
                           <tr>
-                             <th>考题ID</th>
+                             <th width="5%">考题ID</th>
                              <th>考试题目</th>
                              <th>考题选项A</th>
                              <th>考题选项B</th>
                              <th>考题选项C</th>
                              <th>考题选项D</th>
-                             <th>正确选项</th>
-                             <th>编辑操作</th>
-                             <th>删除操作</th>
+                             <th width="5%">答案</th>
+                             <th width="5%">编辑</th>
+                             <th width="5%">删除</th>
                           </tr>
                          </thead>
                          <tbody>

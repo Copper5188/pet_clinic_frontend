@@ -64,7 +64,7 @@ class FunctionM{
             data :{
                    "data": {
                      'medicine_name'   : functionmedicine.medicine_name,
-                     'medicine_des' : functionmedicine.medicine_des,
+                     'medicine_des'    : functionmedicine.medicine_des,
 
                             }
                     }

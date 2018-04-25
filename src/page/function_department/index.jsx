@@ -115,11 +115,11 @@ Deletedpm(e,dpm_id){
                        <table className="table table-striped table-bordered">
                         <thead>
                           <tr>
-                             <th>科室ID</th>
-                             <th>科室名</th>
+                             <th width="5%">科室ID</th>
+                             <th width="5%">科室名</th>
                              <th>科室描述</th>
-                             <th>编辑操作</th>
-                             <th>删除操作</th>
+                             <th width="5%">编辑</th>
+                             <th width="5%">删除</th>
                           </tr>
                          </thead>
                          <tbody>

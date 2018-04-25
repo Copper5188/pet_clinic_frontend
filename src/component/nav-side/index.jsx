@@ -36,7 +36,7 @@ class SideNav extends React.Component{
                             </NavLink>
                         </li>
                         <li className="active">
-                            <NavLink to="/function" activeClassName="active-menu">
+                            <NavLink to="#" activeClassName="active-menu">
                                 <i className="fa fa-bar-chart-o"></i>
                                 <span>结构与功能管理</span>
                                 <span className="fa arrow"></span>
@@ -56,9 +56,6 @@ class SideNav extends React.Component{
                                 </li>
                                 <li>
                                     <NavLink to="/function_assay/index" activeClassName="active-menu">化验项目管理</NavLink>
-                                </li>
-                                <li>
-                                    <NavLink to="/function_vaccine/index" activeClassName="active-menu">疫苗管理</NavLink>
                                 </li>
                             </ul>
                         </li>

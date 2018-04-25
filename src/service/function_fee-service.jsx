@@ -56,18 +56,20 @@ class FunctionF{
             });
     }
 
-//保存  收费接口有问题
-   saveFunctionf(functionfee){
-        return _nn.request({
-            type : 'post',
-            url  : 'http://111.231.84.129:5188/pay/addpay',
-            data :{
-                   "data": {
-                     'pay_name'   : functionfee.pay_name,
-                            }
-                    }
-            });
-    }
+//保存  没body
+saveFunctionf(functionfee){
+    return _nn.request({
+        type : 'post',
+        url  : 'http://111.231.84.129:5188/pay/addPay',
+        data :{
+               "data": {
+                 'pay_name'   : functionfee.pay_name,
+                 'pay_amount'    : functionfee.pay_amount,
+
+                        }
+                }
+        });
+}
 
 //修改
    editFunctionf(functionfee){

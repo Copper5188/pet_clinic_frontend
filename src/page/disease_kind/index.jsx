@@ -115,11 +115,11 @@ Deletedikind(e,dikind_id){
                        <table className="table table-striped table-bordered">
                         <thead>
                           <tr>
-                             <th>病种ID</th>
-                             <th>病种名</th>
+                             <th width="5%">病种ID</th>
+                             <th width="8%">病种名</th>
                              <th>病种描述</th>
-                             <th>编辑操作</th>
-                             <th>删除操作</th>
+                             <th width="5%">编辑</th>
+                             <th width="5%">删除</th>
                           </tr>
                          </thead>
                          <tbody>
@@ -132,7 +132,6 @@ Deletedikind(e,dikind_id){
                                          <td>{dikind.dikind_name}</td>
                                          <td>{dikind.dikind_des}</td>
                                          <td> 
-                                             <Link className="opear" to = { `/disease_kind/detail/${dikind.dikind_id}`}>详情</Link>
                                              <Link className="opear" to = { `/disease_kind/edit/${dikind.dikind_id}`}>编辑</Link>                                                      
                                          </td>
                                          <td>

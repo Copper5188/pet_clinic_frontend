@@ -2,7 +2,7 @@ Arguments:
   C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js run dev
 
 PATH: 
-  C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Couchapp;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\Program Files\nodejs\node_global;C:\Program Files\MySQL\MySQL Utilities 1.6\;C:\Program Files\Redis\;C:\Program Files (x86)\Yarn\bin\;C:\Users\anbang.zhou\AppData\Local\Microsoft\WindowsApps;C:\ffmpeg\bin;c:\SecurityGate\website\jdk1.7.0_79\bin;C:\Program Files\Microsoft VS Code\bin;C:\Users\anbang.zhou\AppData\Roaming\npm;C:\Users\anbang.zhou\AppData\Local\Yarn\bin
+  C:\ProgramData\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Couchapp;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\Program Files\nodejs\node_global;C:\Program Files\MySQL\MySQL Utilities 1.6\;C:\Program Files\Redis\;C:\Program Files (x86)\Yarn\bin\;"%JAVA_HOME%\bin;";C:\maven\apache-maven-3.5.3\bin；;C:\Users\anbang.zhou\AppData\Local\Microsoft\WindowsApps;C:\ffmpeg\bin;c:\SecurityGate\website\jdk1.7.0_79\bin;C:\Program Files\Microsoft VS Code\bin;C:\Users\anbang.zhou\AppData\Roaming\npm;C:\Users\anbang.zhou\AppData\Local\Yarn\bin;C:\maven\apache-maven-3.5.3\bin；;
 
 Yarn version: 
   1.5.1

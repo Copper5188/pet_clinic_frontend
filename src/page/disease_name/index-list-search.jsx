@@ -4,7 +4,7 @@ class ListSearch extends React.Component{
 	constructor(props){
 		super(props);
 		this.state ={
-			searchType     : 	'diname_id',//diname_id,diname_name
+			searchType     : 'diname_id',//diname_id,diname_name
 			searchKeyword  : '',
 		}
 	}
@@ -30,7 +30,7 @@ class ListSearch extends React.Component{
                                 		onChange={(e) => this.OnValueChange(e)}
                                 		name='searchType'>
                                     <option value="diname_id">按病名ID查询</option>
-                                    <option value="diname_name">按病名查询</option>
+                                    <option value="diname_name">按病名名称查询</option>
                                 </select>
                               </div>
                               <div className="form-group"> 

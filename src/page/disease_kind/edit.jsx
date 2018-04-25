@@ -75,7 +75,7 @@ class DiseaseKindEdit extends React.Component{
                       <div className="form-group">
                         <label className="col-md-2 control-label">病种描述</label>
                         <div className="col-md-5">
-                          <input  className="form-control"  
+                          <textarea rows='8'  className="form-control"  
                           placeholder="请输入病种描述"
                           name="dikind_des"
                           value={this.state.dikind_des}
@@ -87,19 +87,6 @@ class DiseaseKindEdit extends React.Component{
                         <CategorySelector onCategoryChange={(categroyId) => this.onCategoryChange(categroyId)}/>
                       </div>
                      */} 
-                      <div className="form-group">
-                        <label className="col-md-2 control-label">病种图片</label>
-                        <div className="col-md-10">
-                                    xxxxx
-                        </div>
-                     </div>
-
-                    <div className="form-group">
-                        <label className="col-md-2 control-label">病种详情</label>
-                        <div className="col-md-10">
-                                    detail
-                        </div>
-                     </div>
 
                       <div className="form-group">
                         <div className="col-md-offset-2 col-md-10">

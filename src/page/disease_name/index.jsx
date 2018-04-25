@@ -115,11 +115,12 @@ Deletediname(e,diname_id){
                        <table className="table table-striped table-bordered">
                         <thead>
                           <tr>
-                             <th>病名ID</th>
-                             <th>病名</th>
+                             <th width="5%">病名ID</th>
+                             <th width="5%">病名</th>
+                             <th width="8%">所属病种</th>
                              <th>病名描述</th>
-                             <th>编辑操作</th>
-                             <th>删除操作</th>
+                             <th width="5%">编辑</th>
+                             <th width="5%">删除</th>
                           </tr>
                          </thead>
                          <tbody>
@@ -130,10 +131,10 @@ Deletediname(e,diname_id){
                                     <tr key={index}>
                                          <td>{diname.diname_id}</td>
                                          <td>{diname.diname_name}</td>
+                                         <td>{diname.dikind_name}</td>
                                          <td>{diname.diname_des}</td>
                                          <td> 
-                                             <Link className="opear" to = { `/disease_name/detail/${diname.diname_id}`}>详情</Link>
-                                             <Link className="opear" to = { `/disease_name/save/${diname.diname_id}`}>编辑</Link>                                                      
+                                             <Link className="opear" to = { `/disease_name/edit/${diname.diname_id}`}>编辑</Link>                                                      
                                          </td>
                                          <td>
                                             <button className="btn btn-xs btn-warning" onClick={(e) => {this.Deletediname(e,diname.diname_id)}}>删除</button>

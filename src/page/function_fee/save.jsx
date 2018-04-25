@@ -28,7 +28,8 @@ class FunctionFeeSave extends React.Component{
 
 	onSubmit(){
 		let functionfee ={
-			fee_name   : this.state.fee_name,
+			pay_name     : this.state.pay_name,
+			pay_amount   : this.state.pay_amount,
 			//id :this.state.secondCategoryID
 		};
 		_functionf.saveFunctionf(functionfee).then((res)=> {
@@ -46,7 +47,16 @@ class FunctionFeeSave extends React.Component{
 					    <label className="col-md-2 control-label">收费名称</label>
 					    <div className="col-md-5">
 					      <input type="text" className="form-control" placeholder="收费名称"
-					    	name="fee_name"
+					    	name="pay_name"
+					    	onChange={(e) => this.onValueChange(e)}/>
+					    </div>
+					  </div>
+
+					  <div className="form-group">
+					    <label className="col-md-2 control-label">收费金额</label>
+					    <div className="col-md-5">
+					      <input type="text" className="form-control" placeholder="收费金额"
+					    	name="pay_amount"
 					    	onChange={(e) => this.onValueChange(e)}/>
 					    </div>
 					  </div>

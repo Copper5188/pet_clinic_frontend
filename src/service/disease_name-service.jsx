@@ -18,7 +18,7 @@ class DiseaseN{
             //data.curPage               =listParam.curPage;
         }else if (listParam.listType ==='search'){
             if (listParam.searchType ==='diname_id'){
-            url                        ="http://111.231.84.129:5188/diname/find?diname_id=7";
+            url                        ="http://111.231.84.129:5188/diname/find?diname_id=" + listParam.keyword;
             data.curPage               =listParam.curPage;
             }
                 else{
@@ -64,8 +64,8 @@ class DiseaseN{
             data :{
                    "data": {
                      'diname_name': diseasename.diname_name,
-                     'diname_des' : diseasename.diname_des
-
+                     'diname_des' : diseasename.diname_des,
+                     'dikind_id'  : diseasename.dikind_id
                             }
                     }
             });
@@ -97,10 +97,10 @@ class DiseaseN{
 getFirstCategoryList(parentCategoryId){
         return _nn.request({
             type : 'get',
-            url  : 'http://111.231.84.129:5188/diname/allList',
+            url  : 'http://111.231.84.129:5188/dikind/allList',
             data :{
                    "data": {
-                        "diname_id": parentCategoryId || 0     
+                        "dikind_id": parentCategoryId || 0     
                             }
                     }
             });

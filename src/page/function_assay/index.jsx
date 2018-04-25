@@ -130,7 +130,7 @@ Deleteassay(e,assay_id){
                                     <tr key={index}>
                                          <td>{assay.assay_id}</td>
                                          <td>{assay.assay_name}</td>
-                                         {/* <td>{assay.assay_des}</td> */}
+                                         <td>{assay.assay_des}</td>
                                          <td> 
                                              <Link className="opear" to = { `/function_assay/edit/${assay.assay_id}`}>编辑</Link>                                                      
                                          </td>

@@ -12,6 +12,12 @@ import Disease_kind 	 from 'page/disease_kind/index.jsx';
 import Disease_kind_save from 'page/disease_kind/save.jsx';
 import Disease_kind_edit from 'page/disease_kind/edit.jsx';
 
+
+import Disease_name 	 from 'page/disease_name/index.jsx';
+import Disease_name_save from 'page/disease_name/save.jsx';
+import Disease_name_edit from 'page/disease_name/edit.jsx';
+
+
 import Disease_case	 from 'page/disease_case/index.jsx';
 import Disease_case_save from 'page/disease_case/save.jsx';
 import Disease_case_edit from 'page/disease_case/edit.jsx';
@@ -45,7 +51,6 @@ import Exam_question 	  from 'page/exam_question/index.jsx';
 import Exam_question_save from 'page/exam_question/save.jsx';
 import Exam_question_edit from 'page/exam_question/edit.jsx';
 
-import Disease_name 	 from 'page/disease_name/index.jsx';
 
 
 class App extends React.Component{
@@ -64,6 +69,8 @@ class App extends React.Component{
 				    		<Route path="/disease_kind/edit/:dkid"  component={Disease_kind_edit}/>
 							
 							<Route path="/disease_name/index" component={Disease_name}/>
+							<Route path="/disease_name/save"  component={Disease_name_save}/>
+				    		<Route path="/disease_name/edit/:dnid"  component={Disease_name_edit}/>
 
                             <Route path="/disease_case/index" component={Disease_case}/> 
 				    		<Route path="/disease_case/save"  component={Disease_case_save}/>

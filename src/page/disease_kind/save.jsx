@@ -34,8 +34,6 @@ class DiseaseKindSave extends React.Component{
 	}
 
 	onSubmit(){
-		alert($('#sd').val())
-		console.log(this.state.formData)
 		let diseasekind ={
 			dikind_name : this.state.dikind_name,
 			dikind_des 	: this.state.dikind_des,
@@ -61,15 +59,6 @@ class DiseaseKindSave extends React.Component{
     	//});  
 		//}
 		
-		let formData = new FormData();
-		formData.append("file",document.getElementById('pic').files[0]);
-		// let file = $('#pic')[0].files[0];
-		// console.log("lllllll:" + file);
-		// formData.set("file",file);
-		//let formData = new formData($('#uploadForm'));
-		_diseasek.uploadPIC(formData).then((res)=> {
-			alert('图片上传成功');
-		})
 
 		_diseasek.saveDiseasek(diseasekind).then((res)=> {
 			alert('信息上传成功');
@@ -93,7 +82,7 @@ class DiseaseKindSave extends React.Component{
 					  <div className="form-group">
 					    <label className="col-md-2 control-label">病种描述</label>
 					    <div className="col-md-5">
-					      <input  className="form-control"  
+					      <textarea rows='8'  className="form-control"  
 					      placeholder="请输入病种描述"
 					      name="dikind_des"
 					    	onChange={(e) => this.onValueChange(e)}/>
@@ -106,28 +95,6 @@ class DiseaseKindSave extends React.Component{
 					 */} 
 
 
-
-					  <div className="form-group" >
-					  	<label className="col-md-2 control-label">病种图片</label>
-					  	<div className="col-md-5">
-							<form id= "uploadForm" onChange={(e) => this.uploadPIC(e)}>
-								<input type="file" name="file" id="pic" />
-                        	{/*  <input type="file" name="file" id="pic"/>*/} 
-                        	{/*
-                        	  <div className="Section">
-                                <input type="text" name="text" />
-                              </div>
-                        	 */}
-                    	   </form>
-					  	</div>
-					 </div>
-
-					<div className="form-group">
-					  	<label className="col-md-2 control-label">病种详情</label>
-					  	<div className="col-md-10">
-					  				detail
-					  	</div>
-					 </div>
 
 					  <div className="form-group">
 					    <div className="col-md-offset-2 col-md-10">

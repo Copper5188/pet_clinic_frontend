@@ -7,6 +7,7 @@ class Home extends React.Component{
 		return(
 				<div id="page-wrapper">
 				  <h1 className='page-header'>首页</h1>
+				  <img src="hompage.jpg" width="425" height="510"/>
 				    <PageTitle title="首页">
 				     	
 				    </PageTitle>

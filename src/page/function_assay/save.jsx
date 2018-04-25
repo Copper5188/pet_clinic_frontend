@@ -29,6 +29,7 @@ class FunctionAssaySave extends React.Component{
 	onSubmit(){
 		let functionassay ={
 			assay_name   : this.state.assay_name,
+			assay_des  	 : this.state.assay_des,
 			//id :this.state.secondCategoryID
 		};
 		_functiona.saveFunctiona(functionassay).then((res)=> {
@@ -51,14 +52,14 @@ class FunctionAssaySave extends React.Component{
 					    </div>
 					  </div>
 
-						{/* // <div className="form-group">
-					  //   <label className="col-md-2 control-label">化验项目描述</label>
-					  //   <div className="col-md-5">
-					  //     <textarea col="10" type="text" className="form-control" placeholder="请输入化验项目名称"
-					  //   	name="assay_des"
-					  //   	onChange={(e) => this.onValueChange(e)}/>
-					  //   </div>
-					  // </div> */}
+						 <div className="form-group">
+					     <label className="col-md-2 control-label">化验项目描述</label>
+					     <div className="col-md-5">
+					       <textarea col="20" type="text" className="form-control" placeholder="请输入化验项目描述"
+					    	name="assay_des"
+					    	onChange={(e) => this.onValueChange(e)}/>
+					    </div>
+					  </div>
 
 	
 					 
