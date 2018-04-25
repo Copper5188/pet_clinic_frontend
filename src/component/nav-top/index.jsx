@@ -22,10 +22,8 @@ class TopNav extends React.Component{
     }
     //退出登录
     onLogout(){
-        return _mm.request({
-			type : 'get',
-			url  : 'http://111.231.84.129:5188/login',
-		})
+        alert("登出成功");
+        window.location.href='/login';
     //     _user.logout().then(res =>{
     //         _mm.removeStorage('userInfo');
     //         window.location.href = 'login';
@@ -46,7 +44,7 @@ class TopNav extends React.Component{
                             <i className="fa fa-user fa-fw"></i>
                             {
                                     
-                                    <span>欢迎，admin</span>
+                                    <span>欢迎</span>
                             }
                             <i className="fa fa-caret-down"></i>
                         </a>

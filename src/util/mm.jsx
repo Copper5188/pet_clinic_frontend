@@ -21,7 +21,7 @@ class MUtil{
      			if('000' === res.code){
                      typeof resolve === 'function' && resolve(res.data, res.msg);
 
-                     window.location.href='/';
+                     window.location.href='/home';
      			}
      			else {
 					 typeof reject === 'function' && reject(res.msg || res.data);

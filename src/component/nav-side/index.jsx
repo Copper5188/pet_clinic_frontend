@@ -23,7 +23,7 @@ class SideNav extends React.Component{
                     <ul className="nav" >
                         
                         <li>
-                            <NavLink exact to="/" activeClassName="active-menu">
+                            <NavLink exact to="/home" activeClassName="active-menu">
                                 <i className="fa fa-bar-chart-o"></i>
                                 <span>首页</span>
                             </NavLink>
