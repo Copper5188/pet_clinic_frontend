@@ -34,7 +34,7 @@ class DiseaseCaseSave extends React.Component{
 	}
 
 	onSubmit(){
-		alert($('#sd').val())
+		//alert($('#sd').val())
 		console.log(this.state.formData)
 		let diseasecase ={
 			dicase_name : this.state.dicase_name,

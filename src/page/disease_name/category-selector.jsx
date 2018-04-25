@@ -52,7 +52,7 @@ class CategorySelector extends React.Component{
 		// 	this.loadSecondCategory();
 		// 	//alert('second',firstCategoryId);
 		// }
-		alert(this.state.firstCategoryId);
+		//alert(this.state.firstCategoryId);
 	}
 	
 	);

@@ -115,8 +115,8 @@ Deletedikind(e,dikind_id){
                        <table className="table table-striped table-bordered">
                         <thead>
                           <tr>
-                             <th width="5%">病种ID</th>
-                             <th width="8%">病种名</th>
+                             <th width="6%">病种ID</th>
+                             <th width="10%">病种名</th>
                              <th>病种描述</th>
                              <th width="5%">编辑</th>
                              <th width="5%">删除</th>

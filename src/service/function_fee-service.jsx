@@ -81,7 +81,7 @@ saveFunctionf(functionfee){
                    "data": {
                      'pay_id'       : functionfee.pay_id,
                      'pay_name'     : functionfee.pay_name,
-                     'pay_des'      : functionfee.pay_des,
+                     'pay_amount'   : functionfee.pay_amount,
                             }
                     }
             });

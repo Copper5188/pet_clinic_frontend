@@ -115,7 +115,7 @@ Deletediname(e,diname_id){
                        <table className="table table-striped table-bordered">
                         <thead>
                           <tr>
-                             <th width="5%">病名ID</th>
+                             <th width="6%">病名ID</th>
                              <th width="5%">病名</th>
                              <th width="8%">所属病种</th>
                              <th>病名描述</th>

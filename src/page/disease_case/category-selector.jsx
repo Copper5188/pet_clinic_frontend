@@ -60,7 +60,7 @@ class CategorySelector extends React.Component{
 			secondCategoryId    : newValue,
 			
 		},() => {
-			alert(this.state.secondCategoryId);	//很重要传他传他
+			//alert(this.state.secondCategoryId);	//很重要传他传他
 		});
 	}
 

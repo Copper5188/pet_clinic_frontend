@@ -81,6 +81,7 @@ class FunctionA{
                    "data": {
                      'assay_id'          : functionassay.assay_id,
                      'assay_name'        : functionassay.assay_name,
+                     'assay_des'        : functionassay.assay_des,
                             }
                     }
             });

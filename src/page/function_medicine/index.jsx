@@ -115,7 +115,7 @@ Deletemedicine(e,medicine_id){
                        <table className="table table-striped table-bordered">
                         <thead>
                           <tr>
-                             <th width="5%">药品ID</th>
+                             <th width="7%">药品ID</th>
                              <th width="8%">药品名称</th>
                              <th>药品描述</th>
                              <th width="8%">药品编辑</th>

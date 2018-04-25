@@ -31,14 +31,14 @@ class DiseaseNameSave extends React.Component{
 	}
 
 	onSubmit(){
-		alert($('#sd').val())
+		//alert($('#sd').val())
 		let diseasename ={
 			diname_name : this.state.diname_name,
 			diname_des 	: this.state.diname_des,
 		  dikind_id   : document.getElementById('firstCategoryId').value
 			//id :this.state.secondCategoryID
 		};
-    alert(this.state.firstCategoryID)
+   // alert(this.state.firstCategoryID)
 		_diseasen.saveDiseasen(diseasename).then((res)=> {
 			alert('信息上传成功');
 			this.props.history.push('/disease_name/index');

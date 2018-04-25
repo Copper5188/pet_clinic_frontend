@@ -36,7 +36,7 @@ class FunctionAssayEdit extends React.Component{
             _functiona.getFunctionassayinfo(this.state.assay_id).then( res => {
             //res = JSON.stringify(res);
             this.setState({assay_name  : res.data[0].assay_name});
-            this.setState({assay_des: res.data[0].assay_des});
+            this.setState({assay_des   : res.data[0].assay_des});
             //alert("load信息",this.state.stay_id)
             });
              
